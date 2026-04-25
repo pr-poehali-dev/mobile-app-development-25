@@ -116,23 +116,21 @@ export default function HeroSection() {
       )}
 
       {/* Hero Content */}
-      <div className="relative z-10 flex h-full items-center justify-center px-6">
-        <div className="text-center text-white max-w-4xl">
-          <div className="inline-flex items-center gap-2 bg-orange-500/20 border border-orange-400/40 rounded-full px-4 py-1.5 mb-6">
+      <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 pb-16 gap-0">
+        <div className="text-center text-white max-w-4xl flex flex-col items-center">
+          <div className="inline-flex items-center gap-2 bg-orange-500/20 border border-orange-400/40 rounded-full px-4 py-1.5 mb-5">
             <span className="w-2 h-2 rounded-full bg-orange-400 animate-pulse" />
             <span className="text-orange-300 text-sm font-semibold tracking-widest">
               {slides[currentSlide].tag}
             </span>
           </div>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-wider mb-4 leading-none">
-            {slides[currentSlide].heading.split(" ").map((word, i) => (
-              <span key={i}>{word}<br /></span>
-            ))}
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-wider mb-4 leading-tight whitespace-pre-line">
+            {slides[currentSlide].heading}
           </h1>
-          <p className="text-xl md:text-2xl font-light tracking-wide mb-10 text-gray-200">
+          <p className="text-xl md:text-2xl font-light tracking-wide mb-8 text-gray-200">
             {slides[currentSlide].sub}
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <LiquidButton
               size="xxl"
               className="font-semibold text-lg tracking-wide"
@@ -149,7 +147,7 @@ export default function HeroSection() {
           </div>
 
           {/* Stats */}
-          <div className="mt-16 flex justify-center gap-12 text-center">
+          <div className="flex justify-center gap-8 md:gap-12 text-center">
             {[
               { val: "3000+", label: "Участников" },
               { val: "50+", label: "Тренеров" },
